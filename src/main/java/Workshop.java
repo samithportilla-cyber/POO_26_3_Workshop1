@@ -5,7 +5,7 @@ public class Workshop {
 
     }
 
-    // Método que suma dos números enteros ajjjjj
+    // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
         // TODO: Implementar el método para retornar la suma de dos números enteros.
         // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
@@ -24,20 +24,9 @@ public class Workshop {
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
-        // Si el límite es 0 o negativo, retorna un arreglo vacío
-        if (limite <= 0) {
-            return new int[0];
-        }
-
-        // Se instancia el arreglo con la cantidad de elementos definida por 'limite'
-        int[] tabla = new int[limite];
-
-        // Se calcula cada posición de la tabla (desde 1 hasta limite)
-        for (int i = 0; i < limite; i++) {
-            tabla[i] = numero * (i + 1);
-        }
-
-        return tabla;
+        // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
+        // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
+        return new int[0];
     }
 
     // Método que calcula el factorial de un número entero
