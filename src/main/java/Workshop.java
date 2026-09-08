@@ -214,19 +214,14 @@ public boolean buscarElemento(int[] arreglo, int elemento) {
 
 
     // Método que cuenta los caracteres en una cadena
-    public int contarCaracteres(String cadena) {
+   public String invertirCadena(String cadena) {
     if (cadena == null) {
-        return 0;
-    }
-    return cadena.length();
-}
-
-    // Método que invierte una cadena
-    public String invertirCadena(String cadena) {
-        // TODO: Implementar el método para invertir una cadena.
-        // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
         return "";
     }
+    return new StringBuilder(cadena)
+            .reverse()
+            .toString();
+}
 
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
