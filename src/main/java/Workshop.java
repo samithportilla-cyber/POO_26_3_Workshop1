@@ -159,10 +159,27 @@ public boolean buscarElemento(int[] arreglo, int elemento) {
 
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
-        // TODO: Implementar el método para eliminar los duplicados de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+    int[] temporal = new int[arreglo.length];
+    int cantidad = 0;
+    for (int i = 0; i < arreglo.length; i++) {
+        boolean repetido = false;
+        for (int j = 0; j < cantidad; j++) {
+            if (temporal[j] == arreglo[i]) {
+                repetido = true;
+                break;
+            }
+        }
+        if (!repetido) {
+            temporal[cantidad] = arreglo[i];
+            cantidad++;
+        }
     }
+    int[] resultado = new int[cantidad];
+    for (int i = 0; i < cantidad; i++) {
+        resultado[i] = temporal[i];
+    }
+    return resultado;
+}
 
     // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
