@@ -194,25 +194,32 @@ public boolean buscarElemento(int[] arreglo, int elemento) {
 }
 
     // Método que rota un arreglo n posiciones
-    public int[] rotarArreglo(int[] arreglo, int posiciones) {
+   public int[] rotarArreglo(int[] arreglo, int posiciones) {
     if (arreglo == null || arreglo.length == 0) {
         return new int[0];
     }
+
     int n = arreglo.length;
-    posiciones = posiciones % n;
+    int desplazamiento = ((posiciones % n) + n) % n;
     int[] resultado = new int[n];
+
     for (int i = 0; i < n; i++) {
-        resultado[i] = arreglo[(i + posiciones) % n];
+        resultado[(i + desplazamiento) % n] = arreglo[i];
     }
+
     return resultado;
 }
 
+
+
+
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
-        // TODO: Implementar el método para contar el número de caracteres en una cadena.
-        // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
+    if (cadena == null) {
         return 0;
     }
+    return cadena.length();
+}
 
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
