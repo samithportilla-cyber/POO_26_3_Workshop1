@@ -195,10 +195,17 @@ public boolean buscarElemento(int[] arreglo, int elemento) {
 
     // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
-        // TODO: Implementar el método para rotar un arreglo n posiciones.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
+    if (arreglo == null || arreglo.length == 0) {
         return new int[0];
     }
+    int n = arreglo.length;
+    posiciones = posiciones % n;
+    int[] resultado = new int[n];
+    for (int i = 0; i < n; i++) {
+        resultado[i] = arreglo[(i + posiciones) % n];
+    }
+    return resultado;
+}
 
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
