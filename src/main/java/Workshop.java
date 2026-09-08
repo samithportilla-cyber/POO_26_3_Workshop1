@@ -272,11 +272,25 @@ public String reemplazarSubcadena(String cadena,String antiguaSubcadena,String n
 
 
     // Método que busca una subcadena en una cadena y retorna su índice
-    public int buscarSubcadena(String cadena, String subcadena) {
-        // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
-        // Ejemplo: Si cadena = "Hello world" y subcadena = "world", el resultado debería ser 6.
+   public int buscarSubcadena(String cadena, String subcadena) {
+    if (cadena == null || subcadena == null) {
         return -1;
     }
+    if (subcadena.isEmpty()) {
+        return 0;
+    }
+    for (int i = 0; i <= cadena.length() - subcadena.length(); i++) {
+        int j = 0;
+        while (j < subcadena.length()
+                && cadena.charAt(i + j) == subcadena.charAt(j)) {
+            j++;
+        }
+        if (j == subcadena.length()) {
+            return i;
+        }
+    }
+    return -1;
+}
 
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
