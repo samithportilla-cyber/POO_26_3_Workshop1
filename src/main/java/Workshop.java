@@ -52,13 +52,9 @@ public class Workshop {
 
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
-    if (numero < 2) {
-        return false;
-    }
+    if (numero < 2) return false;
     for (int i = 2; i * i <= numero; i++) {
-        if (numero % i == 0) {
-            return false;
-        }
+        if (numero % i == 0) return false;
     }
     return true;
 }
@@ -214,7 +210,7 @@ public boolean buscarElemento(int[] arreglo, int elemento) {
 
 
     // Método que cuenta los caracteres en una cadena
-   public String invertirCadena(String cadena) {
+   public String contarCaracteres(String cadena) {
     if (cadena == null) {
         return "";
     }
@@ -223,13 +219,27 @@ public boolean buscarElemento(int[] arreglo, int elemento) {
             .toString();
 }
 
-    // Método que verifica si una cadena es un palíndromo
-    public boolean esPalindromo(String cadena) {
-        // TODO: Implementar el método para verificar si una cadena es un palíndromo.
-        // Ejemplo: Si cadena = "madam", el resultado debería ser true.
+    // Método que invierte una cadena
+  public String invertirCadena(String cadena) {
+	  if (cadena == null ) {
+		  return "";
+	  }
+	  return new StringBuilder (cadena).reverse().toString();
+}
+
+// Método que verifica si una cadena es un palíndromo
+public boolean esPalindromo(String cadena) {
+    if (cadena == null) {
         return false;
     }
-
+    String limpia = cadena
+            .replaceAll("[^a-zA-Z0-9]", "")
+            .toLowerCase();
+    String invertida = new StringBuilder(limpia)
+            .reverse()
+            .toString();
+    return limpia.equals(invertida);
+}
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
         // TODO: Implementar el método para contar el número de palabras en una cadena.
