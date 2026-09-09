@@ -337,11 +337,24 @@ public boolean validarCorreoElectronico(String correo) {
 }
 
     // Método que convierte un número en su representación hexadecimal
-    public String convertirAHexadecimal(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación hexadecimal.
-        // Ejemplo: Si numero = 255, el resultado debería ser "FF".
-        return "";
+   public String convertirAHexadecimal(int numero) {
+    if (numero == 0) {
+        return "0";
     }
+    boolean negativo = numero < 0;
+    long valor = Math.abs((long) numero);
+    String digitos = "0123456789ABCDEF";
+    StringBuilder hexadecimal = new StringBuilder();
+    while (valor > 0) {
+        int residuo = (int) (valor % 16);
+        hexadecimal.append(digitos.charAt(residuo));
+        valor /= 16;
+    }
+    if (negativo) {
+        hexadecimal.append('-');
+    }
+    return hexadecimal.reverse().toString();
+}
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
