@@ -319,11 +319,22 @@ public boolean validarCorreoElectronico(String correo) {
 }
 
     // Método que convierte un número en su representación binaria
-    public String convertirABinario(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación binaria.
-        // Ejemplo: Si numero = 10, el resultado debería ser "1010".
-        return "";
+   public String convertirABinario(int numero) {
+    if (numero == 0) {
+        return "0";
     }
+    boolean negativo = numero < 0;
+    long valor = Math.abs((long) numero);
+    StringBuilder binario = new StringBuilder();
+    while (valor > 0) {
+        binario.append(valor % 2);
+        valor /= 2;
+    }
+    if (negativo) {
+        binario.append('-');
+    }
+    return binario.reverse().toString();
+}
 
     // Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
