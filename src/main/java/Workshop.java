@@ -381,27 +381,7 @@ public boolean validarCorreoElectronico(String correo) {
     return ganaUsuario ? "Ganaste" : "Perdiste";
 }
 
-    public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
-    }
+    
 
     public double areaCirculo(double radio) {
         return 0.0;
